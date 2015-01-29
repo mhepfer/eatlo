@@ -1,14 +1,6 @@
 
 <h1><%= restaurant.escape("name") %></h1>
-<p>Rating:</p>
-<% var count = 0 %>
-<% var sum = 0 %>
-<% restaurant.reviews.each(function(review){ %>
-	<% count  = count + 1 %>
-	<% sum = sum + parseInt(review.escape("score")) %>
-<% })%>
-
-<%= sum/count %>
+<p>Rating: <%=restaurant.score%></p>
 
 <p><%= restaurant.escape("description") %></p>
 <p><%= restaurant.escape("location") %></p>

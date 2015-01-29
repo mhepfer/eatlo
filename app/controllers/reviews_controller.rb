@@ -14,9 +14,8 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-    @review.user_id = current_user.id
     if @review.save
-      redirect_to review_url(@review)
+      render :index
     else
       flash.now[:errors] = @review.errors.full_messages
       render :new
@@ -30,7 +29,7 @@ class ReviewsController < ApplicationController
   def update
     @review = Review.find(params[:id])
     if @review.update_attributes(review_params)
-      redirect_to review_url(@review)
+      render :index
     else
       flash.now[:errors] = @review.errors.full_messages
       render :edit
@@ -40,7 +39,6 @@ class ReviewsController < ApplicationController
   def destroy
     review = Review.find(params[:id])
     review.destroy
-    redirect_to reviews_url
   end
 
   private
