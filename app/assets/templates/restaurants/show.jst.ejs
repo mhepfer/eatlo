@@ -1,0 +1,28 @@
+
+<h1><%= restaurant.escape("name") %></h1>
+<p>Rating:</p>
+<% var count = 0 %>
+<% var sum = 0 %>
+<% restaurant.reviews.each(function(review){ %>
+	<% count  = count + 1 %>
+	<% sum = sum + parseInt(review.escape("score")) %>
+<% })%>
+
+<%= sum/count %>
+
+<p><%= restaurant.escape("description") %></p>
+<p><%= restaurant.escape("location") %></p>
+
+<h3>Reviews</h3>
+<ul>
+<% restaurant.reviews.each(function(review){ %>
+	<li>
+		<p><%= review.escape("title")%></p>
+		<p><%= review.escape("comment")%></p>
+		<p><%= review.escape("score")%></p>
+	</li>
+	<%})%>
+</ul>
+
+<a href="#/review/new">Add a Review</a>
+<a href="#/">Index</a>

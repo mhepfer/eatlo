@@ -1,0 +1,14 @@
+<label for='name'>Restaurant Name</label><br>
+<input type='text' name='name' id='name' 
+value='<%= restaurant.escape('name') %>'><br>
+
+<label for='description'>Restaurant description</label><br>
+<input type='text' name='description' id='description' 
+value='<%= restaurant.escape('description') %>'><br>
+
+<label for='location'>Restaurant location</label><br>
+<input type='text' name='location' id='location' 
+value='<%= restaurant.escape('location') %>'><br>
+
+<button>Submit</button>
+<a href='#/'>Back</a>

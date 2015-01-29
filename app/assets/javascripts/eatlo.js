@@ -7,9 +7,7 @@ window.Eatlo = {
     new Eatlo.Routers.Router({
     	$rootEl: $(content)
     })
+
+    Backbone.history.start();
   }
 };
-
-$(document).ready(function(){
-  Eatlo.initialize();
-});

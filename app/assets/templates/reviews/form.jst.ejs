@@ -1,0 +1,14 @@
+<label for='title'>Title</label><br>
+<input type='text' name='title' id='title' 
+value='<%= review.escape('title') %>'><br>
+
+<label for='comment'>Comment</label><br>
+<input type='text' name='comment' id='comment' 
+value='<%= restaurant.escape('comment') %>'><br>
+
+<label for='location'>Score</label><br>
+<input type='text' name='location' id='location' 
+value='<%= restaurant.escape('location') %>'><br>
+
+<button>Submit</button>
+<a href='#/'>Back</a>

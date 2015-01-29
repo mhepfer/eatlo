@@ -4,3 +4,6 @@ Eatlo.Collections.Reviews = Backbone.Collection.extend({
   model: Eatlo.Models.Review
 
 });
+
+  Eatlo.Collections.reviews = new Eatlo.Collections.Reviews();
+  Eatlo.Collections.reviews.fetch();

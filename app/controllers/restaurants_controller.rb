@@ -14,9 +14,8 @@ class RestaurantsController < ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
-    @restaurant.user_id = current_user.id
     if @restaurant.save
-      redirect_to restaurant_url(@restaurant)
+      render :index
     else
       flash.now[:errors] = @restaurant.errors.full_messages
       render :new
@@ -30,7 +29,7 @@ class RestaurantsController < ApplicationController
   def update
     @restaurant = Restaurant.find(params[:id])
     if @restaurant.update_attributes(restaurant_params)
-      redirect_to restaurant_url(@restaurant)
+      render :index
     else
       flash.now[:errors] = @restaurant.errors.full_messages
       render :edit
@@ -40,12 +39,11 @@ class RestaurantsController < ApplicationController
   def destroy
     restaurant = Restaurant.find(params[:id])
     restaurant.destroy
-    redirect_to restaurants_url
   end
 
   private
   def restaurant_params
-    params.require(:restaurant).permit(:title, :comment, :score)
+    params.require(:restaurant).permit(:name, :description, :location)
   end
 
 end
