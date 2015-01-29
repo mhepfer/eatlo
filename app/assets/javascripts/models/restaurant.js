@@ -6,14 +6,18 @@ Eatlo.Models.Restaurant = Backbone.Model.extend({
 	},
 
 	calculateScore: function () {
-		var count = 0;
-		var sum = 0;
-		this.reviews.each(function(review){
-			count = count + 1;
-			sum = sum + parseInt(review.escape('score'));
-		})
+		if(typeof this.reviews !== "undefined"){
 
-		return sum/count
+			var count = 0;
+			var sum = 0;
+			this.reviews.each(function(review){
+				count = count + 1;
+				sum = sum + parseInt(review.escape('score'));
+			})
+
+			return sum/count
+		}
+		return 0
 	},
 	
 	parse: function (response) {

@@ -2,7 +2,7 @@ Eatlo.Views.RestaurantsList = Backbone.View.extend({
 	template: JST['restaurants/list'],
 
   events: {
-    "click .delete": "destroyRestaurant"
+    "click #delete": "destroyRestaurant"
   },
 
 	initialize: function () {

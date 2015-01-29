@@ -4,7 +4,7 @@
 	<li>
 		<a href="#/restaurants/<%= restaurant.id %>"><%=restaurant.escape("name")%>
 		</a>
-	<button class="delete" data-id="<%= restaurant.id %>">Delete!</button>
+	<button id="delete" class="btn btn-danger" data-id="<%= restaurant.id %>">Delete!</button>
   <a href="#/restaurants/<%= restaurant.id %>/edit">Edit</a>
 	</li>
 <%	}) %>
