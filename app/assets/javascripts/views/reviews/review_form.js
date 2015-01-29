@@ -8,7 +8,8 @@ Eatlo.Views.ReviewForm = Backbone.View.extend({
 
   render: function () {
     var renderedContent = this.template({
-      review: this.model
+      review: this.model,
+      restaurants: this.collection
     });
     this.$el.html(renderedContent);
     return this;

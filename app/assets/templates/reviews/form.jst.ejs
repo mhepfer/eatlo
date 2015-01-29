@@ -2,6 +2,14 @@
 
 <form>
 
+	<label for="restaurant_id">Restaurant:</label><br>
+			<select name="restaurant_id">
+				<% restaurants.each(function(restaurant){ %>
+					<option value="<%=restaurant.id%>"><%=restaurant.escape("name")%></option>
+				<% }) %>
+	</select>
+	<br>
+
 	<label for='title'>Title</label><br>
 	<input type='text' name='title' id='title' 
 	value='<%= review.escape('title') %>'><br>

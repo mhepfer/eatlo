@@ -43,7 +43,7 @@ Eatlo.Routers.Router = Backbone.Router.extend({
   newReview: function () {
   	var newReview = new Eatlo.Models.Review();
   	var formView = new Eatlo.Views.ReviewForm({
-  		collection: Eatlo.Collections.reviews,
+  		collection: Eatlo.Collections.restaurants,
   		model: newReview
   	});
 
