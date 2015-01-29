@@ -2,12 +2,13 @@
 <ul>
 <% restaurants.each(function(restaurant){ %>
 	<li>
-		<a href="#/restaurants/<%= restaurant.id %>"><%=restaurant.escape("name")%>
+		<a href="#/restaurants/<%= restaurant.id %>" class="restaurant"><%=restaurant.escape("name")%>
 		</a>
+		<br>
 	<button id="delete" class="btn btn-danger" data-id="<%= restaurant.id %>">Delete!</button>
   <a href="#/restaurants/<%= restaurant.id %>/edit">Edit</a>
 	</li>
 <%	}) %>
 </ul>
 
-<a href="#/restaurants/new">Add a Restaurant</a>
+<a href="#/restaurants/new" id="add" >Add a Restaurant</a>
